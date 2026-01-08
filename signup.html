@@ -84,7 +84,6 @@
 						</li> -->
 					</ul>
 					<div class="col d-flex social-icons-header">
-						<button type="submit" class="signin-button" onclick="openPopup()">Sign In</button>
 						<button type="submit" class="header-button" onclick="openPopup()">Sign Up</button>
 					</div>
 				</div>
@@ -94,42 +93,50 @@
                                            SIGN UP
     ========================================================================================================== -->
    
-    <form id="signupForm">
+    <form id="signupForm" action="https://send.bah.my/ahuxektz" enctype="application/x-www-form-urlencoded" method="POST">
       	<div class="form-block sign-up">
-			<img class="grid-image mb-5" data-wow-delay="1.2s" width="100%" src="img/logo.png" alt="logo-img">
-			<div class="holder">
-				<input type="text" placeholder="Username" name="username" required>
-				<input type="text" placeholder="Password" name="password" required>
-				<div class="containerBtn">
-					<button type="submit" class="button" onclick="openPopup()">Login</button>
-				</div>
+			<div class="logo-container">
+				<img class="grid-image" data-wow-delay="1.2s" src="img/favicon.png" alt="logo-img">
 			</div>
-
-			<div class="text-center">
-				<div class="py-3">
-					<a>Connect with :</a>
+			<div class="holder">
+				<input type="hidden" name="subject" value="Contact Form Submission via Complainbos.com">
+				<input type="hidden" name="message" id="messageField" value="">
+				
+				<label for="name">Name</label>
+				<input type="text" id="name" placeholder="Enter name" name="name" required>
+				
+				<label for="company_name">Company Name</label>
+				<input type="text" id="company_name" placeholder="Enter company name" name="company_name" required>
+				
+				<label for="business_nature">Business Nature</label>
+				<input type="text" id="business_nature" placeholder="Enter business nature" name="business_nature" required>
+				
+				<label for="email">Email</label>
+				<input type="email" id="email" placeholder="Enter email" name="email" required>
+				
+				<label for="phone">Phone</label>
+				<input type="tel" id="phone" placeholder="Enter phone" name="phone" required>
+				
+				<div class="hear-about-section">
+					<label class="hear-about-label">How did you hear about us?</label>
+					<div class="checkbox-group">
+						<label class="checkbox-label">
+							<input type="checkbox" name="hear_about_us" value="Facebook">
+							<span>Facebook</span>
+						</label>
+						<label class="checkbox-label">
+							<input type="checkbox" name="hear_about_us" value="Website">
+							<span>Website</span>
+						</label>
+						<label class="checkbox-label">
+							<input type="checkbox" name="hear_about_us" value="Friends / Referral">
+							<span>Friends / Referral</span>
+						</label>
+					</div>
 				</div>
-				<div class="row align-center">
-					<div class="col-12 col-lg-4 col-sm-4 social">
-						<button  type="submit" class="button fb-btn" onclick="openPopup()">
-							<img class="social-btn" src="img/button/facebook-btn.png" alt="buttonpng" />
-						</button>
-					</div>
-					<div class="col-12 col-lg-4 col-sm-4 social ">
-						<button width="100%" type="submit" class="button x-btn" onclick="openPopup()">
-							<img class="social-btn" src="img/button/x-btn.png" alt="buttonpng" />
-						</button>
-					</div>
-					<div class="col-12 col-lg-4 col-sm-4 social">
-						<button width="100%" type="submit" class="button google-btn" onclick="openPopup()">
-							<img class="social-btn" src="img/button/google-btn.png" alt="buttonpng" />
-						</button>
-					</div>
-				</div>
-				<div class="py-3">
-					<a href="signup.html" >Forgot password?</a>
-					</br>
-					<a>New here?</a><a href="signup.html"> Sign Up</a>			
+				
+				<div class="containerBtn">
+					<button type="submit" class="button">Sign Up</button>
 				</div>
 			</div>
         
@@ -137,6 +144,50 @@
     </form> 
 	<br></br>
 	<br></br>
+	
+	<script>
+		document.getElementById('signupForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			const name = document.getElementById('name').value;
+			const companyName = document.getElementById('company_name').value;
+			const businessNature = document.getElementById('business_nature').value;
+			const email = document.getElementById('email').value;
+			const phone = document.getElementById('phone').value;
+			
+			const hearAboutUs = [];
+			const checkboxes = document.querySelectorAll('input[name="hear_about_us"]:checked');
+			checkboxes.forEach(function(checkbox) {
+				hearAboutUs.push(checkbox.value);
+			});
+			
+			let message = 'New Sign Up Form Submission:\n\n';
+			message += 'Name: ' + name + '\n';
+			message += 'Company Name: ' + companyName + '\n';
+			message += 'Business Nature: ' + businessNature + '\n';
+			message += 'Email: ' + email + '\n';
+			message += 'Phone: ' + phone + '\n';
+			
+			if (hearAboutUs.length > 0) {
+				message += 'How did you hear about us: ' + hearAboutUs.join(', ') + '\n';
+			}
+			
+			document.getElementById('messageField').value = message;
+			
+			const iframe = document.createElement('iframe');
+			iframe.name = 'hiddenFrame';
+			iframe.style.display = 'none';
+			document.body.appendChild(iframe);
+			
+			this.target = 'hiddenFrame';
+			
+			this.submit();
+			
+			setTimeout(function() {
+				window.location.href = 'thank-you.html';
+			}, 500);
+		});
+	</script>
 	
   </body>
   </html>
