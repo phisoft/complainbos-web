@@ -100,7 +100,7 @@
 			</div>
 			<div class="holder">
 				<input type="hidden" name="subject" value="New Sign Up for Complainbos">
-				<input type="hidden" name="message" id="messageField" value="">
+				<input type="success_url" value="https://www.complainbos.com/thank-you.html">
 				
 				<label for="name">Name</label>
 				<input type="text" id="name" placeholder="Enter name" name="name" required>
@@ -144,51 +144,6 @@
     </form> 
 	<br></br>
 	<br></br>
-	
-	<script>
-		document.getElementById('signupForm').addEventListener('submit', function(e) {
-			e.preventDefault();
-			
-			const name = document.getElementById('name').value;
-			const companyName = document.getElementById('company_name').value;
-			const businessNature = document.getElementById('business_nature').value;
-			const email = document.getElementById('email').value;
-			const phone = document.getElementById('phone').value;
-			
-			const hearAboutUs = [];
-			const checkboxes = document.querySelectorAll('input[name="hear_about_us"]:checked');
-			checkboxes.forEach(function(checkbox) {
-				hearAboutUs.push(checkbox.value);
-			});
-			
-			let message = 'New Sign Up Form Submission:\n\n';
-			message += 'Name: ' + name + '\n';
-			message += 'Company Name: ' + companyName + '\n';
-			message += 'Business Nature: ' + businessNature + '\n';
-			message += 'Email: ' + email + '\n';
-			message += 'Phone: ' + phone + '\n';
-			
-			if (hearAboutUs.length > 0) {
-				message += 'How did you hear about us: ' + hearAboutUs.join(', ') + '\n';
-			}
-			
-			document.getElementById('messageField').value = message;
-			
-			const iframe = document.createElement('iframe');
-			iframe.name = 'hiddenFrame';
-			iframe.style.display = 'none';
-			document.body.appendChild(iframe);
-			
-			this.target = 'hiddenFrame';
-			
-			this.submit();
-			
-			setTimeout(function() {
-				window.location.href = 'thank-you.html';
-			}, 500);
-		});
-	</script>
-	
   </body>
   </html>
   
