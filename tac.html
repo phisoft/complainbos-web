@@ -61,9 +61,9 @@
 						<a class="nav-link" href="#" onclick="$('#service').goTo();return false;">Services</a>
 					</li>
 				</ul>
-				<div class="col d-flex social-icons-header">
-					<a href="signup.html" class="header-button" style="text-decoration: none; display: inline-block; text-align: center;">Sign Up</a>
-				</div>
+					<div class="col d-flex social-icons-header">
+						<button type="submit" class="header-button" onclick="openPopup()">Sign Up</button>
+					</div>
 			</div>
 		</nav>
 	</div>
@@ -156,6 +156,12 @@
 	</div>
 
 	<br><br>
+
+	<script>
+		function openPopup() {
+			window.location.href = 'signup.html';
+		}
+	</script>
 
 </body>
 </html>
