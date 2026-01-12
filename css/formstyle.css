@@ -270,6 +270,57 @@
      padding: 0;
      margin: 0;
    }
+   
+   /* Terms and Conditions Checkbox */
+   .terms-checkbox-container {
+     margin: 25px 0 25px 0;
+     padding-top: 20px;
+     border-top: 1px solid #f0f0f0;
+     text-align: left;
+   }
+   
+   .terms-checkbox-label {
+     display: flex;
+     align-items: flex-start;
+     cursor: pointer;
+     font-size: 14px;
+     font-weight: 500;
+     color: #333;
+     line-height: 1.6;
+     user-select: none;
+     padding: 12px 15px;
+     background-color: #f9fafb;
+     border: 1px solid #e5e7eb;
+     border-radius: 6px;
+     transition: background-color 0.2s ease, border-color 0.2s ease;
+   }
+   
+   .terms-checkbox-label:hover {
+     background-color: #f3f4f6;
+     border-color: #d1d5db;
+   }
+   
+   .terms-checkbox-label input[type="checkbox"] {
+     width: 18px;
+     height: 18px;
+     margin: 2px 12px 0 0;
+     cursor: pointer;
+     accent-color: #234197;
+     flex-shrink: 0;
+     border-radius: 3px;
+     align-self: flex-start;
+   }
+   
+   .terms-checkbox-label a {
+     color: #234197;
+     text-decoration: underline;
+     font-weight: 600;
+     margin-left: 4px;
+   }
+   
+   .terms-checkbox-label a:hover {
+     color: #1a3370;
+   }
 
    @media (max-width:900px) {
     .sign-up {
@@ -417,5 +468,72 @@
      
      .thank-you-message {
        font-size: 14px;
+     }
+   }
+   
+   /* Terms and Conditions*/
+   .terms-container {
+     max-width: 900px;
+     margin: 80px auto;
+     padding: 40px;
+     background: #fff;
+     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+     border-radius: 12px;
+   }
+   
+   .terms-title {
+     font-size: 32px;
+     font-weight: 700;
+     color: #234197;
+     margin-bottom: 30px;
+     text-align: center;
+   }
+   
+   .terms-content {
+     line-height: 1.8;
+     color: #555;
+   }
+   
+   .terms-content h2 {
+     font-size: 24px;
+     font-weight: 600;
+     color: #2c3e50;
+     margin-top: 30px;
+     margin-bottom: 15px;
+   }
+   
+   .terms-content p {
+     margin-bottom: 15px;
+   }
+   
+   .terms-content ul {
+     margin-left: 20px;
+     margin-bottom: 20px;
+   }
+   
+   .terms-content li {
+     margin-bottom: 10px;
+   }
+   
+   .back-link {
+     display: inline-block;
+     margin-top: 30px;
+     color: #234197;
+     text-decoration: none;
+     font-weight: 500;
+   }
+   
+   .back-link:hover {
+     text-decoration: underline;
+   }
+   
+   @media (max-width: 768px) {
+     .terms-container {
+       margin: 40px 20px;
+       padding: 30px 25px;
+     }
+     
+     .terms-title {
+       font-size: 26px;
      }
    }
