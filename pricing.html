@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<!--
+	App by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://freehtml5.co
+-->
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Complainbos | Pricing Plans - Customer complaint management system</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Choose the perfect plan for your business. Free trial, Standard, and Enterprise packages available." />
+	<meta name="keywords" content="pricing, plans, complain management, business software" />
+	<meta name="author" content="" />
+
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="Complainbos Pricing Plans" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+		integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!--====== Favicon Icon ======-->
+	<link rel="shortcut icon" href="/img/fav.svg" type="image" />
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Pricing page specific styles -->
+	<style>
+		.pricing-section {
+			padding: 100px 0;
+			background-color: #F7FAFD;
+		}
+		
+		.pricing-title {
+			text-align: center;
+			margin-bottom: 60px;
+		}
+		
+		.pricing-card {
+			background: white;
+			border-radius: 15px;
+			padding: 40px 30px;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.pricing-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+		}
+		
+		.pricing-card.popular {
+			border: 2px solid #203881;
+			position: relative;
+		}
+		
+		.popular-badge {
+			position: absolute;
+			top: 20px;
+			right: -30px;
+			background: #203881;
+			color: white;
+			padding: 8px 40px;
+			transform: rotate(45deg);
+			font-size: 14px;
+			font-weight: 600;
+		}
+		
+		.pricing-header {
+			text-align: center;
+			margin-bottom: 30px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #eee;
+		}
+		
+		.plan-name {
+			font-size: 28px;
+			font-weight: 700;
+			color: #203881;
+			margin-bottom: 10px;
+		}
+		
+		.plan-price {
+			font-size: 48px;
+			font-weight: 800;
+			color: #203881;
+			margin-bottom: 5px;
+		}
+		
+		.plan-period {
+			font-size: 16px;
+			color: #7a7a7a;
+			margin-bottom: 20px;
+		}
+		
+		.plan-description {
+			font-size: 16px;
+			color: #7a7a7a;
+			line-height: 1.6;
+			margin-bottom: 30px;
+		}
+		
+		.features-list {
+			list-style: none;
+			padding: 0;
+			margin-bottom: 40px;
+		}
+		
+		.features-list li {
+			padding: 12px 0;
+			border-bottom: 1px solid #f0f0f0;
+			font-size: 16px;
+			color: #333;
+			position: relative;
+			padding-left: 30px;
+		}
+		
+		.features-list li:last-child {
+			border-bottom: none;
+		}
+		
+		.features-list li:before {
+			content: "✓";
+			position: absolute;
+			left: 0;
+			color: #203881;
+			font-weight: bold;
+			font-size: 18px;
+		}
+		
+		.features-list li.disabled {
+			color: #aaa;
+		}
+		
+		.features-list li.disabled:before {
+			content: "✗";
+			color: #ccc;
+		}
+		
+		.pricing-btn {
+			display: block;
+			width: 100%;
+			padding: 15px;
+			text-align: center;
+			background: #203881;
+			color: white;
+			border-radius: 8px;
+			font-size: 18px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: background 0.3s ease;
+			border: none;
+		}
+		
+		.pricing-btn:hover {
+			background: #162b63;
+			color: white;
+			text-decoration: none;
+		}
+		
+		.pricing-btn.secondary {
+			background: #F1F1F1;
+			color: #203881;
+		}
+		
+		.pricing-btn.secondary:hover {
+			background: #e0e0e0;
+		}
+		
+		.pricing-faq {
+			margin-top: 100px;
+			padding: 60px 0;
+			background-color: #EFF6FF;
+		}
+		
+		.faq-title {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		
+		.faq-item {
+			margin-bottom: 25px;
+			background: white;
+			border-radius: 10px;
+			padding: 25px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+		}
+		
+		.faq-question {
+			font-size: 20px;
+			font-weight: 600;
+			color: #203881;
+			margin-bottom: 15px;
+		}
+		
+		.faq-answer {
+			font-size: 16px;
+			color: #7a7a7a;
+			line-height: 1.7;
+		}
+		
+		@media (max-width: 768px) {
+			.pricing-section {
+				padding: 60px 0;
+			}
+			
+			.pricing-card {
+				margin-bottom: 30px;
+			}
+			
+			.plan-price {
+				font-size: 36px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div id="page-wrap">
+
+
+		<!-- ==========================================================================================================
+													   HERO
+		 ========================================================================================================== -->
+
+		<div class="bg-light">
+			<nav class="container navbar navbar-expand-lg main-navbar-nav navbar-light">
+
+				<div class="col-7 p-0 col-lg-3 m-0">
+					<a class="navbar-brand" href="index.html">
+						<img class="img-fluid" src="/img/logo.png" alt="Complainbos">
+					</a>
+				</div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav nav-items-center ml-auto mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="index.html#about">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="index.html#feature">Features</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="index.html#service">Services</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="pricing.html">Pricing <span class="sr-only">(current)</span></a>
+						</li>
+					</ul>
+					<div class="social-icons-header">
+						<a href="https://www.facebook.com/fh5co"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://freehtml5.co"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<!-- ==========================================================================================================
+													 PRICING SECTION
+		 ========================================================================================================== -->
+
+		<section class="pricing-section">
+			<div class="container">
+				<div class="pricing-title">
+					<h2 class="second-title text-bold fs-40 color-primary animated fadeIn wow" data-wow-delay="0.4s">
+						<span class="fs-19-bold">Simple, Transparent</span><br>
+						Pricing Plans
+					</h2>
+					<p class="text-center mt-4 fs-18 lh-2rem col-lg-8 mx-auto animated fadeIn wow" data-wow-delay="0.67s">
+						Choose the perfect plan for your business needs. All plans include our core complaint management features with different levels of support and capabilities.
+					</p>
+				</div>
+				
+				<div class="row">
+					<!-- Free Trial Plan -->
+					<div class="col-lg-4 mb-4 mb-lg-0 animated fadeIn wow" data-wow-delay="0.8s">
+						<div class="pricing-card">
+							<div class="pricing-header">
+								<h3 class="plan-name">Free Trial</h3>
+								<div class="plan-price">$0</div>
+								<div class="plan-period">for 30 days</div>
+								<p class="plan-description">Perfect for trying out our system with full features</p>
+							</div>
+							
+							<ul class="features-list">
+								<li>30-day free trial</li>
+								<li>All core features included</li>
+								<li>Up to 5 users</li>
+								<li>Basic complaint management</li>
+								<li>Email support</li>
+								<li>KPI & Reporting (limited)</li>
+								<li class="disabled">Multi-branch support</li>
+								<li class="disabled">Custom branding</li>
+								<li class="disabled">Priority support</li>
+							</ul>
+							
+							<a href="signup.html" class="pricing-btn secondary">Start Free Trial</a>
+						</div>
+					</div>
+					
+					<!-- Standard Plan (Most Popular) -->
+					<div class="col-lg-4 mb-4 mb-lg-0 animated fadeIn wow" data-wow-delay="1.0s">
+						<div class="pricing-card popular">
+							<div class="popular-badge">Most Popular</div>
+							<div class="pricing-header">
+								<h3 class="plan-name">Standard</h3>
+								<div class="plan-price">RM600/year</div>
+								<div class="plan-period">per month</div>
+								<p class="plan-description">Ideal for growing businesses with multiple users</p>
+							</div>
+							
+							<ul class="features-list">
+								<li>Everything in Free Trial</li>
+								<li>Up to 5 users included</li>
+								<li>Advanced complaint management</li>
+								<li>Full KPI & Reporting</li>
+								<li>Multi-department support</li>
+								<li>Complaint tagging</li>
+								<li>Notifications system</li>
+								<li>QR Code submission</li>
+								<li>Email & phone support</li>
+								<li class="disabled">Multi-branch support</li>
+								<li class="disabled">Custom branding</li>
+							</ul>
+							
+							<a href="signup.html" class="pricing-btn">Get Started</a>
+						</div>
+					</div>
+					
+					<!-- Enterprise Plan -->
+					<div class="col-lg-4 mb-4 mb-lg-0 animated fadeIn wow" data-wow-delay="1.2s">
+						<div class="pricing-card">
+							<div class="pricing-header">
+								<h3 class="plan-name">Enterprise</h3>
+								<div class="plan-price"></div>
+								<div class="plan-period">Please contact sales</div>
+								<p class="plan-description">For large organizations with complex needs</p>
+							</div>
+							
+							<ul class="features-list">
+								<li>Everything in Standard</li>
+								<li>Unlimited users</li>
+								<li>Multi-branch support</li>
+								<li>Custom branding</li>
+								<li>White-label solution</li>
+								<li>Priority 24/7 support</li>
+								<li>Advanced analytics</li>
+								<li>Custom integrations</li>
+								<li>Dedicated account manager</li>
+								<li>Onboarding & training</li>
+								<li>SLA guarantee</li>
+							</ul>
+							
+							<a href="signup.html" class="pricing-btn">Contact Sales</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="text-center mt-5 animated fadeIn wow" data-wow-delay="1.4s">
+					<p class="fs-16">Need a custom plan? <a href="#" class="color-primary text-bold">Contact our sales team</a> for enterprise solutions.</p>
+				</div>
+			</div>
+		</section>
+		
+		<!-- ==========================================================================================================
+													 FAQ SECTION
+		 ========================================================================================================== -->
+		
+		<section class="pricing-faq">
+			<div class="container">
+				<div class="faq-title">
+					<h2 class="second-title text-bold fs-40 color-primary animated fadeIn wow" data-wow-delay="0.4s">
+						Frequently Asked Questions
+					</h2>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-6 animated fadeIn wow" data-wow-delay="0.6s">
+						<div class="faq-item">
+							<h4 class="faq-question">Can I switch plans later?</h4>
+							<p class="faq-answer">Yes, you can upgrade or downgrade your plan at any time. Changes will be prorated and take effect immediately.</p>
+						</div>
+					</div>
+					
+					<div class="col-lg-6 animated fadeIn wow" data-wow-delay="0.8s">
+						<div class="faq-item">
+							<h4 class="faq-question">Is there a setup fee?</h4>
+							<p class="faq-answer">No, there are no setup fees for any of our plans. The Free Trial and Standard plans can be activated instantly.</p>
+						</div>
+					</div>
+					
+					<div class="col-lg-6 animated fadeIn wow" data-wow-delay="1.0s">
+						<div class="faq-item">
+							<h4 class="faq-question">What payment methods do you accept?</h4>
+							<p class="faq-answer">We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans.</p>
+						</div>
+					</div>
+					
+					<div class="col-lg-6 animated fadeIn wow" data-wow-delay="1.2s">
+						<div class="faq-item">
+							<h4 class="faq-question">Can I cancel anytime?</h4>
+							<p class="faq-answer">Yes, you can cancel your subscription at any time. There are no long-term contracts or cancellation fees.</p>
+						</div>
+					</div>
+					
+					<div class="col-lg-6 animated fadeIn wow" data-wow-delay="1.4s">
+						<div class="faq-item">
+							<h4 class="faq-question">Do you offer discounts for non-profits?</h4>
+							<p class="faq-answer">Yes, we offer special pricing for non-profit organizations and educational institutions. Contact our sales team for details.</p>
+						</div>
+					</div>
+					
+					<div class="col-lg-6 animated fadeIn wow" data-wow-delay="1.6s">
+						<div class="faq-item">
+							<h4 class="faq-question">Is my data secure?</h4>
+							<p class="faq-answer">Yes, we use enterprise-grade security with encryption, regular backups, and comply with data protection regulations. Your data is stored securely in our SOC2-compliant data centers.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- ==========================================================================================================
+                                               SECTION 7 - SUB FOOTER
+    ========================================================================================================== -->
+
+	<footer id="footer" class="footer-outer">
+		<div class="container footer-inner">
+
+			<div class="row wow fadeIn animated d-flex justify-content-between" data-wow-delay="0.66s">
+				<div class="col-lg-4 mb-4 mb-lg-0">
+					<div class="d-flex justify-content-start justify-content-lg-start">
+						<div class="m-0 p-0 col-8 mb-1">
+							<img class="img-fluid mt-5 mt-lg-0" src="/img/logo.png" alt="Complainbos">
+						</div>
+					</div>
+					<p class="fs-14 mt-2 lh-2rem text-justify text-lg-left">
+						Complainbos streamlines business complaints with a centralized system for viewing, 
+						tracking, and storing customer queries and resolutions through a unified portal, 
+						ensuring efficient handling.
+					</p>
+				</div>
+
+				<div class="col-lg-2 mb-4 mb-lg-0">
+					<h5 class="color-primary text-bold mb-4">Menu</h5>
+
+					<ul class="list-unstyled">
+						<li><a class="fs-15" href="index.html">Home
+							</a></li>
+						<li><a class="fs-15" href="index.html#about">About
+							</a></li>
+						<li><a class="fs-15" href="index.html#feature">Features
+							</a></li>
+						<li><a class="fs-15" href="index.html#service">Services
+							</a></li>
+						<li><a class="fs-15" href="pricing.html">Pricing
+							</a></li>
+					</ul>
+
+				</div>
+				<div class="col-lg-4 mb-4 mb-lg-0">
+					<h5 class="color-primary text-bold mb-4">
+						More info
+					</h5>
+					<ul class="list-unstyled">
+						<li class="fs-14 d-flex mb-2 lh-2rem"><i
+								class="fa fa-map-marker-alt color-primary rel-top-10px mr-2"></i>
+							H-8-10, Aeropod Commercial Square, Jalan Aeropod Off Jalan Kepayan, 88200 Kota
+							Kinabalu,
+							Sabah, MY.
+						</li>
+						<li class="fs-14 d-flex mb-2"><i class="fa fa-phone color-primary  rel-top-3px mr-2"></i>
+							+6012 - 873 1819</li>
+						<li class="fs-14 d-flex mb-2"><i class="fa fa-envelope color-primary  rel-top-3px mr-2"></i>
+							hello@phisoft.my</li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 mb-4 mb-lg-0">
+					<h5 class="color-primary text-bold text-lg-center mb-4">
+						Find us
+					</h5>
+					<div class="d-flex justify-content-lg-center">
+						<ul class="list-unstyled d-flex d-lg-block ">
+							<li class="mr-2 mr-lg-0">
+								<span class="fa-stack mb-2">
+									<a href="https://instagram.com/phisoft.my">
+										<i class="fas fa-circle fa-stack-2x"></i>
+										<i class="fab fa-instagram fa-stack-1x text-white"></i>
+									</a>
+								</span>
+							</li>
+							<li class="mr-2 mr-lg-0"><span class="fa-stack mb-2">
+									<a href="https://facebook.com/phisoft.my/">
+										<i class="fas fa-circle fa-stack-2x"></i>
+										<i class="fab fa-facebook-f fa-stack-1x text-white"></i>
+									</a>
+								</span></li>
+							<li class="mr-2 mr-lg-0"><span class="fa-stack mb-2">
+									<a href="https://www.linkedin.com/company/phisoft-my/mycompany/">
+										<i class="fas fa-circle fa-stack-2x"></i>
+										<i class="fab fa-linkedin fa-stack-1x text-white"></i>
+									</a>
+								</span></li>
+							<li class="mr-2 mr-lg-0">
+								<span class="fa-stack mb-2">
+									<a href="https://www.phisoft.my/">
+										<i class="fas fa-circle fa-stack-2x"></i>
+										<i class="fa fa-globe fa-stack-1x text-white"></i>
+									</a>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<span class="border-bottom-footer"></span>
+
+			<p class="copyright">&copy; 2022 Complainbos. All rights reserved.
+
+		</div>
+	</footer>
+
+
+
+
+	</div> <!-- main page wrapper -->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
