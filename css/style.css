@@ -106,7 +106,7 @@ html {
     width: 100%;
     background-color: #F7FAFD;
     background: url("../img/hero-bg.png") no-repeat right center;
-    background-size: contain;
+    background-size: cover;
     /* border-radius: 0 0 50% 50% / 4%; */
   }
 
