@@ -69,15 +69,44 @@ html {
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 1199px) {
+  #fh5co-hero-wrapper {
+    background-image: none !important; 
+    background-color: #F7FAFD;
+    height: auto !important;
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: block;
+  }
+
+  #fh5co-hero-wrapper .container .row div[class*="col-"] {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #fh5co-hero-wrapper .d-flex {
+    justify-content: center !important;
+  }
+
+  #fh5co-hero-wrapper p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important; 
+  }
+}
+
+@media (min-width: 1200px) {
   #fh5co-hero-wrapper {
     display: flex;
     align-items: center;
     height: 94vh;
     width: 100%;
     background-color: #F7FAFD;
-    background: url("../img/hero-bg.png") no-repeat center;
-    background-size: cover;
+    background: url("../img/hero-bg.png") no-repeat right center;
+    background-size: contain;
     /* border-radius: 0 0 50% 50% / 4%; */
   }
 
@@ -848,9 +877,9 @@ html {
 
   .fh5co-hero-inner .fh5co-hero-smartphone {
     position: absolute;
-right: -91px;
-top: 90px;
-height: 470px;
+    right: -91px;
+    top: 90px;
+    height: 470px;
   }
 
   .curved-bg-div {
@@ -861,6 +890,7 @@ height: 470px;
     width: 100%;
   }
 }
+
 @media screen and (max-width: 1200px) {
   body {
     overflow-x: hidden;
@@ -873,6 +903,7 @@ height: 470px;
     height: 550px;
   }
 }
+
 @media screen and (max-width: 993px) {
   body {
     overflow-x: hidden;
